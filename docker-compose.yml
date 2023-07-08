@@ -4,16 +4,16 @@ services:
    image: api
    build:
      context: .
-     dockerfile: Dockerfile
      container_name: Integration_test1
      build: .
-     image: postman_report
-     command:
-      run Casos_de_teste.postman_collection.json
-      --environment QA.postman_environment.json
-      -r html,cli
-      --reporter-html-export report/report.html    
-      --reporter-html-template report/template.hbs
+      dockerfile: Dockerfile
+      image: postman_report
+      command:
+       run Casos_de_teste.postman_collection.json
+       --environment QA.postman_environment.json
+       -r html,cli
+       --reporter-html-export report/report.html    
+       --reporter-html-template report/template.hbs
         
      volumes:
         - ./src:/etc/newman
