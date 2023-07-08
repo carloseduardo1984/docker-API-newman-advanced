@@ -6,7 +6,7 @@ services:
      context: .
      container_name: Integration_test1
      build: .
-      dockerfile: Dockerfile
+      dockerfile: ./Dockerfile
       image: postman_report
       command:
        run Casos_de_teste.postman_collection.json
@@ -15,7 +15,7 @@ services:
        --reporter-html-export report/report.html    
        --reporter-html-template report/template.hbs
         
-     volumes:
+      volumes:
         - ./src:/etc/newman
         
 #   test2:
