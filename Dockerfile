@@ -15,8 +15,6 @@ RUN apt-get install -y git-core curl build-essential openssl libssl-dev \
  && ./configure \
  && make \
  && sudo make install
-RUN node --version
-RUN npm --version
 # Node
 
 RUN npm install -g newman newman-reporter-html
