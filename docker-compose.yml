@@ -1,22 +1,19 @@
 version: "2.0"
 services:
- api:
-   image: api
-   build:
-     context: .
-     container_name: Integration_test1
-     build: .
-      dockerfile: ./Dockerfile
-      image: postman_report
-      command:
-       run Casos_de_teste.postman_collection.json
-       --environment QA.postman_environment.json
-       -r html,cli
-       --reporter-html-export report/report.html    
-       --reporter-html-template report/template.hbs
-        
-      volumes:
-        - ./src:/etc/newman
+ devcontainer:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+     - ./src:/etc/newman
+    container_name: Integration_test1    
+    image: postman_report
+    command:
+      run Casos_de_teste.postman_collection.json
+      --environment QA.postman_environment.json
+      -r html,cli
+      --reporter-html-export report/report.html    
+      --reporter-html-template report/template.hbs
         
 #   test2:
 #       container_name: Integration_test2
