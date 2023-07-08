@@ -4,10 +4,6 @@ FROM ubuntu:latest
 # ENV HTTPS_PROXY="https://<ip-address>:<port>"
 # ENV NO_PROXY="*.<domain>,127.0.0.0/8"
 
-ENV HTTP_PROXY="https://proxy-us.steganos.com/browse.php?u=ZsLP8mD%2FTVSZVPnDpJzDYIgNwQ4%3D&b=0&f=norefer"
-ENV HTTPS_PROXY="https://proxy-us.steganos.com/browse.php?u=ZsLP8mD%2FTVSZVPnDpJzDYIgNwQ4%3D&b=0&f=norefer"
-ENV NO_PROXY="https://proxy-us.steganos.com/browse.php?u=ZsLP8mD%2FTVSZVPnDpJzDYIgNwQ4%3D&b=0&f=norefer"
-
 # Core dependencies
 RUN apt-get update && apt-get install -y \
   ca-certificates \
