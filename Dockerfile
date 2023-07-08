@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y curl sudo
 RUN curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 RUN sudo apt-get install -y nodejs
 RUN echo "NODE Version:" && node -v
-RUN echo "NPM Version:" && npm -v
+RUN echo "NPM Version:" && run npm -v
 
 
 RUN npm install -g newman newman-reporter-html
