@@ -4,9 +4,9 @@ FROM ubuntu:latest
 # ENV HTTPS_PROXY="https://<ip-address>:<port>"
 # ENV NO_PROXY="*.<domain>,127.0.0.0/8"
 
-ENV HTTP_PROXY="https://us1.proxysite.com/process.php?d=rcnYhjotlFFuJyJgwZzBTk87%2FtA%3D&b=7&f=norefer"
-ENV HTTPS_PROXY="https://us1.proxysite.com/process.php?d=rcnYhjotlFFuJyJgwZzBTk87%2FtA%3D&b=7&f=norefer"
-ENV NO_PROXY="https://us1.proxysite.com/process.php?d=rcnYhjotlFFuJyJgwZzBTk87%2FtA%3D&b=7&f=norefer"
+ENV HTTP_PROXY="https://us1.proxysite.com/"
+ENV HTTPS_PROXY="https://us1.proxysite.com/"
+ENV NO_PROXY="https://us1.proxysite.com/"
 
 # Core dependencies
 RUN apt-get update && apt-get install -y \
