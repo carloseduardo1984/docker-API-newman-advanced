@@ -9,16 +9,15 @@ ENV HTTPS_PROXY="https://us1.proxysite.com/process.php?d=rcnYhjotlFFuJyJgwZzBTk8
 ENV NO_PROXY="https://us1.proxysite.com/process.php?d=rcnYhjotlFFuJyJgwZzBTk87%2FtA%3D&b=7&f=norefer"
 
 # Core dependencies
-RUN apt-get update && apt-get install -y curl sudo
-
+RUN apt-get install -y git-core curl build-essential openssl libssl-dev \
+ && git clone https://github.com/nodejs/node.git \
+ && cd node \
+ && ./configure \
+ && make \
+ && sudo make install
+RUN node --version
+RUN npm --version
 # Node
-# Uncomment your target version
-# RUN curl -fsSL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-# RUN curl -fsSL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-# RUN curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-RUN curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
-RUN sudo apt-get install -y nodejs
-RUN echo "NODE Version:" && node -v
 
 RUN npm install -g newman newman-reporter-html
 
